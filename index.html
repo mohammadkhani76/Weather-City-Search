@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>وضعیت آب و هوا</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>وضعیت آب و هوا</h1>
+      <form class="form" id="form">
+        <input
+          type="text"
+          class="search-input"
+          id="input"
+          placeholder="...نام شهر"
+        />
+        <button type="submit" class="search" id="search-btn">جستجو</button>
+      </form>
+      <div class="temp-section hidden" id="temperature-section">
+        <h2 class="name" id="city-name"></h2>
+        <p id="degree"></p>
+        <p id="degree-desc"></p>
+        <p class="degree-icon" id="icon"></p>
+        <div class="temp" id="temperature">
+          <p class="temperature-main" id="temp-main"></p>
+        </div>
+        <div class="temperature-minormax">
+          <div class="temperature-min" id="temp-min">
+            <p></p>
+          </div>
+          <div class="temperature-max" id="temp-max">
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>

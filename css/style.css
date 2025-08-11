@@ -1,0 +1,181 @@
+@font-face {
+  font-family: "vazir";
+  src: url(../font/Vazir-Light.eot), url(../font/Vazir-Bold.woff),
+    url(../font/Vazir-Bold.woff2);
+}
+
+:root {
+  --white: #ffffff;
+  --off-white: #e5e5e5;
+  --transp-white-1: rgba(255, 255, 255, 0.25);
+  --transp-white-2: rgba(255, 255, 255, 0.1);
+  --blue-1: #62b8f5;
+  --blue-2: #4475ef;
+  --shadow: rgba(3, 46, 87, 0.2);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, var(--blue-1), var(--blue-2));
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "vazir";
+}
+.container {
+  background-color: var(--transp-white-2);
+  border: 2px solid var(--transp-white-2);
+  border-radius: 0.6em;
+  box-shadow: 0 1.8em 3.7em var(--shadow);
+  width: 50%;
+
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.container h1 {
+  text-align: center;
+  color: white;
+  width: 100%;
+}
+.form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+}
+.search {
+  width: 30%;
+  height: 50px;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #62b8f5;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+.search:hover {
+  transform: scale(0.98);
+}
+.search-input {
+  width: 70%;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  background-color: transparent;
+  border-bottom: 2px solid var(--transp-white-1);
+  outline: none;
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.search-input::placeholder {
+  color: var(--off-white);
+}
+.temp-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.temp-section.hidden {
+  display: none;
+}
+.temp {
+  width: 100%;
+  text-align: center;
+}
+
+.temperature-minormax {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.temperature-min {
+  width: 50%;
+  text-align: right;
+  cursor: pointer;
+  color: var(--off-white);
+  padding: 10px;
+}
+.temperature-max {
+  width: 50%;
+  text-align: left;
+  border-left: dashed;
+  color: var(--off-white);
+  padding: 10px;
+}
+.temperature-main,
+.temperature-max,
+.temperature-min {
+  cursor: pointer;
+  direction: rtl;
+}
+.temperature-main {
+  color: var(--white);
+  font-size: 2.5rem;
+}
+.degree-icon img {
+  max-width: 100%;
+  height: auto;
+}
+hr {
+  height: 20px;
+}
+.name {
+  color: var(--white);
+  font-size: 2rem;
+}
+#degree-desc,
+#degree {
+  color: var(--off-white);
+  font-size: 1rem;
+}
+.forecast_container {
+  background-color: aquamarine;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+@media screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 15px;
+  }
+  .container h1,
+  .temp-section h2,
+  .temperature-main p {
+    font-size: 1.5rem;
+  }
+  .search-input {
+    width: 60%;
+  }
+  .search {
+    width: 35%;
+  }
+
+  .temperature-min,
+  .temperature-max {
+    width: 100%;
+    text-align: center;
+  }
+}
