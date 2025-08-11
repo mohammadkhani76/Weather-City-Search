@@ -80,7 +80,7 @@ async function getweather(city) {
     degreeDesc.innerHTML = `${data_weather.weather[0].description}`;
     degreeIcon.innerHTML = `<img src="https://openweathermap.org/img/wn/${data_weather.weather[0].icon}@2x.png" alt="آیکون آب و هوا">`;
     // نمایش اولیه دما به سلسیوس
-    tempMain.innerHTML = `<p>دما: °C ${celsius.toFixed(2)}</p>`;
+    tempMain.innerHTML = `دما: °C ${celsius.toFixed(2)}`;
     tempMin.innerHTML = `<p>دما: °C ${min_celsius.toFixed(2)}</p>`;
     tempMax.innerHTML = `<p>دما: °C ${max_celsius.toFixed(2)}</p>`;
     currentTempUnit = "celsius"; // ریست واحد دما بعد از هر بار درخواست
