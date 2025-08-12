@@ -92,6 +92,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 10px;
+  gap: 20px;
 }
 .temp-section.hidden {
   display: none;
@@ -104,20 +105,15 @@ body {
 .temperature-minormax {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 .temperature-min {
-  width: 50%;
-  text-align: left;
   cursor: pointer;
   color: var(--off-white);
   padding: 0px 8px;
 }
 .temperature-max {
-  width: 50%;
-  text-align: right;
-  border-left: dashed;
   color: var(--off-white);
   padding: 0px 8px;
 }
@@ -132,14 +128,15 @@ body {
   font-size: 1.5rem;
   margin: 0;
 }
-
+.temperature-minormax > hr {
+  border: 1px dashed white;
+  height: 30px;
+}
 .degree-icon img {
   max-width: 100%;
   height: auto;
 }
-hr {
-  height: 20px;
-}
+
 .name {
   color: var(--white);
   font-size: 2rem;
