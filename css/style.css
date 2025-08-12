@@ -34,12 +34,12 @@ body {
   border-radius: 0.6em;
   box-shadow: 0 1.8em 3.7em var(--shadow);
   width: 50%;
-
-  padding: 10px;
+  padding: 30px 10px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  margin: 30px;
 }
 .container h1 {
   text-align: center;
@@ -129,7 +129,7 @@ body {
   margin: 0;
 }
 .temperature-minormax > hr {
-  border: 1px dashed white;
+  border: 1px dashed var(--white);
   height: 30px;
 }
 .degree-icon img {
@@ -146,13 +146,37 @@ body {
   color: var(--off-white);
   font-size: 1rem;
 }
-.forecast_container {
-  background-color: aquamarine;
+.forecast-container {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
+  gap: 10px;
+  color: var(--white);
+}
+.forecast-container-data {
+  width: 100%;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+.forecast-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  gap: 20px;
+  padding: 30px 10px;
+  border-radius: 10px;
+  box-shadow: 0 1.8em 3.7em var(--shadow);
+  /* استایل شیشه‌ای */
+  background: rgba(255, 255, 255, 0.15); /* پس‌زمینه نیمه شفاف */
+  backdrop-filter: blur(10px); /* بلور */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* بوردر شفاف */
 }
 @media screen and (max-width: 768px) {
   .container {
@@ -163,6 +187,7 @@ body {
   .temp-section h2,
   .temperature-main p {
     font-size: 1.5rem;
+    text-align: center;
   }
   .search-input {
     width: 60%;
@@ -175,5 +200,14 @@ body {
   .temperature-max {
     width: 100%;
     text-align: center;
+  }
+}
+@media screen and (max-width: 350px) {
+  .forecast-container-data {
+    width: 100%;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 }

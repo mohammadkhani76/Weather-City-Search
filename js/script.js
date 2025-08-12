@@ -8,6 +8,7 @@ const degreeIcon = document.querySelector("#icon");
 const tempMain = document.querySelector("#temp-main");
 const tempMin = document.querySelector("#temp-min");
 const tempMax = document.querySelector("#temp-max");
+const forecastDataCard = document.querySelector("#forecast-data");
 let currentTempUnit = "celsius";
 
 // متغیرها برای ذخیره دماها
@@ -84,6 +85,7 @@ async function getweather(city) {
     tempMin.innerHTML = `<p>دما: °C ${min_celsius.toFixed(2)}</p>`;
     tempMax.innerHTML = `<p>دما: °C ${max_celsius.toFixed(2)}</p>`;
     currentTempUnit = "celsius"; // ریست واحد دما بعد از هر بار درخواست
+    getForecast(city);
   } catch (error) {
     console.log("City not found", error);
     alert("شهر پیدا نشد یا مشکلی در دریافت اطلاعات وجود دارد.");
@@ -94,3 +96,44 @@ formInput.addEventListener("input", () => {
     temperatureSection.classList.add("hidden");
   }
 });
+
+// دریافت پیش‌بینی وضعیت چند روز آینده
+async function getForecast(city) {
+  try {
+    const city = formInput.value.trim();
+
+    const response = await fetch(
+      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=926dd4ca9cf4413b3e5164f432004851`
+    );
+    if (!response.ok) {
+      throw new Error(`HTTP Error! status:${response.status}`);
+    }
+    const forecastData = await response.json();
+    console.log(forecastData.list);
+    forecastDataCard.innerHTML = ""; // برای پاک‌سازی پیش‌بینی‌های قبلی
+
+    forecastData.list.slice(0, 6).forEach((card) => {
+      const timestamp = card.dt;
+      const date = new Date(timestamp * 1000);
+      const dateStr = date.toLocaleDateString();
+      const timeStr = date.toLocaleTimeString();
+      const temp = card.main.temp;
+      const description = card.weather[0].description;
+      const icon = card.weather[0].icon;
+
+      const cardItem = `          <div class="forecast-card">
+              <p>📅 ${dateStr}</p>
+              <p>🕒 ${timeStr}</p>
+              <img
+                src="https://openweathermap.org/img/wn/${icon}@2x.png"
+                alt="${description}"
+              />
+              <p>🌡️ ${temp}°C</p>
+              <p>${description}</p>
+            </div>`;
+      forecastDataCard.innerHTML += cardItem;
+    });
+  } catch (error) {
+    console.log("error!", error);
+  }
+}
