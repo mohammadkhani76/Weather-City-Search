@@ -85,7 +85,7 @@ async function getweather(city) {
     tempMin.innerHTML = `<p>دما: °C ${min_celsius.toFixed(2)}</p>`;
     tempMax.innerHTML = `<p>دما: °C ${max_celsius.toFixed(2)}</p>`;
     currentTempUnit = "celsius"; // ریست واحد دما بعد از هر بار درخواست
-    getForecast(city);
+    getForecast(city); //// دریافت پیش‌بینی وضعیت چند ساعت آینده
   } catch (error) {
     console.log("City not found", error);
     alert("شهر پیدا نشد یا مشکلی در دریافت اطلاعات وجود دارد.");
@@ -97,7 +97,7 @@ formInput.addEventListener("input", () => {
   }
 });
 
-// دریافت پیش‌بینی وضعیت چند روز آینده
+// دریافت پیش‌بینی وضعیت چند ساعت آینده
 async function getForecast(city) {
   try {
     const city = formInput.value.trim();
