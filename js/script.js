@@ -69,7 +69,6 @@ async function getweather(city) {
     max_fahrenheit = max_celsius * 1.8 + 32;
 
     //  تبدیل سلسیوس به کلوین
-
     kelvin = celsius + 273.15;
     min_kelvin = min_celsius + 273.15;
     max_kelvin = max_celsius + 273.15;
@@ -113,10 +112,10 @@ async function getForecast(city) {
     forecastDataCard.innerHTML = ""; // برای پاک‌سازی پیش‌بینی‌های قبلی
 
     forecastData.list.slice(0, 6).forEach((card) => {
-      const timestamp = card.dt;
-      const date = new Date(timestamp * 1000);
-      const dateStr = date.toLocaleDateString();
-      const timeStr = date.toLocaleTimeString();
+      const timestamp = card.dt; // برحسب  s // dt:1755010800
+      const date = new Date(timestamp * 1000); // s --> ms  => *1000
+      const dateStr = date.toLocaleDateString(); //تبدیل آبجکت Date به رشته تاریخ
+      const timeStr = date.toLocaleTimeString(); // تبدیل آبجکت Date به رشته زمان
       const temp = card.main.temp;
       const description = card.weather[0].description;
       const icon = card.weather[0].icon;
