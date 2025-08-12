@@ -47,6 +47,7 @@ tempMain.addEventListener("click", function () {
     currentTempUnit = "celsius";
   }
 });
+// دریافت اطلاعات شهر و کشور
 async function getweather(city) {
   try {
     const response = await fetch(
