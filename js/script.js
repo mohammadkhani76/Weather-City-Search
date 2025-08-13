@@ -125,13 +125,6 @@ async function getweather(city) {
   }
 }
 
-// اگر ورودی خالی شد، بخش دما را مخفی کن
-formInput.addEventListener("input", () => {
-  if (formInput.value === "") {
-    temperatureSection.classList.add("hidden");
-  }
-});
-
 // دریافت پیش‌بینی وضعیت چند ساعت آینده
 async function getForecast(city) {
   try {
@@ -159,6 +152,7 @@ async function getForecast(city) {
 
       const timestamp = card.dt; // زمان بر حسب ثانیه
       const date = new Date(timestamp * 1000); // تبدیل به میلی‌ثانیه
+      // console.log(date);
       const dateStr = date.toLocaleDateString(); // رشته تاریخ
       const timeStr = date.toLocaleTimeString(); // رشته زمان
       const description = card.weather[0].description;
@@ -184,3 +178,10 @@ async function getForecast(city) {
     console.log("error!", error);
   }
 }
+
+// اگر ورودی خالی شد، بخش دما را مخفی کن
+formInput.addEventListener("input", () => {
+  if (formInput.value === "") {
+    temperatureSection.classList.add("hidden");
+  }
+});
