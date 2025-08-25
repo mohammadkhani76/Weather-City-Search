@@ -57,12 +57,19 @@ https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=YOUR_API_KEY&un
 - Optimize the user interface
 
 ---
+## Live Demo
+
+Check out the live version of the project here:  
+[Weather Forecast Web App](https://weather-city-search-sigma.vercel.app/)
+
+---
 
 ##Contact
 Feel free to reach out:
 
-GitHub: https://github.com/mohammadkhani76/Weather-City-Search
-Email: nazanin.khani2@gmail.com
+- GitHub: https://github.com/mohammadkhani76/Weather-City-Search
+- LinkedIn: https://www.linkedin.com/in/nazanin-mohammadkhani76
+- Email: nazanin.khani2@gmail.com
 
 Thank you for visiting my project!
 
