@@ -3,6 +3,12 @@
 A simple web application that displays the weather status of a city using the OpenWeatherMap API.
 
 ---
+## Live Demo
+
+Check out the live version of the project here:  
+[Weather Forecast Web App](https://weather-city-search-sigma.vercel.app/)
+
+---
 
 ## Features
 
@@ -55,12 +61,6 @@ https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=YOUR_API_KEY&un
 - Display city map using other APIs
 - Add support for multiple languages and more units
 - Optimize the user interface
-
----
-## Live Demo
-
-Check out the live version of the project here:  
-[Weather Forecast Web App](https://weather-city-search-sigma.vercel.app/)
 
 ---
 
